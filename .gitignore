@@ -2,3 +2,5 @@
 kllegro.iml
 .idea
 .gradle
+build
+lib
