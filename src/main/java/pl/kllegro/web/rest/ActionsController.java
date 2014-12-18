@@ -2,8 +2,9 @@ package pl.kllegro.web.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import pl.kllegro.model.Auction;
+import pl.kllegro.model.SimpleAuction;
 import pl.kllegro.service.AuctionService;
 
 import java.util.List;
@@ -12,12 +13,13 @@ import java.util.List;
  * Created by karol on 17.12.14.
  */
 @RestController
-@RequestMapping(value = "/auction")
+@RequestMapping(value = "/rest/auction")
 public class ActionsController {
     @Autowired
     private AuctionService auctionService;
 
-    public List<Auction> getAllAuction() {
+    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
+    public List<SimpleAuction> getAllAuction() {
         return auctionService.getAllAuction();
     }
 

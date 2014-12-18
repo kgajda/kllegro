@@ -13,10 +13,9 @@ import org.springframework.web.context.WebApplicationContext;
 @RestController
 @RequestMapping(value = "/rest")
 public class HomeRestController {
-    Logger logger = LoggerFactory.getLogger(HomeRestController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(HomeRestController.class);
     @RequestMapping(method = RequestMethod.GET,produces = "application/json")
     public String isWork(){
-        logger.warn("asdasddasdas");
         return "{isWork:true}";
     }
 
