@@ -2,6 +2,7 @@ package pl.kllegro.web.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RequestMapping(value = "/rest")
 public class HomeRestController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HomeRestController.class);
-    @RequestMapping(method = RequestMethod.GET,produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public String isWork(){
         return "{isWork:true}";
     }
