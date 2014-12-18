@@ -1,1 +1,22 @@
-<span>auction</span>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Number</td>
+            <td>image</td>
+            <td>Title</td>
+            <td>Time End</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="auction in auctions">
+            <td>{{auction.id}}</td>
+            <td><img ng-src="{{auction.imageUrl}}" height="42" width="42"/></td>
+            <td>{{auction.title}}</td>
+            <td>{{auction.end | date:'medium' }}</td>
+            <td>{{auction.currentPrice}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

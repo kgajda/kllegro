@@ -18,7 +18,16 @@ public class AuctionServiceImplDevNoDb implements AuctionService {
     @Override
     public List<SimpleAuction> getAllAuction() {
         List<SimpleAuction> simpleAuctions = new LinkedList<>();
-        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","temat",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
+        simpleAuctions.add(new SimpleAuction(1,new Date(),"temat","http://cdns2.freepik.com/darmowe-zdjecie/zrob-zdj%C4%99cie--antyki--ramka--zdj%C4%99cie_3303577.jpg",new BigDecimal(20)));
         return simpleAuctions;
     }
 }
