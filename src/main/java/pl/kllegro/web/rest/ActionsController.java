@@ -21,7 +21,7 @@ public class ActionsController {
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<SimpleAuction> getAllAuction() {
-        return auctionService.getAllAuction();
+        return auctionService.getAllSimpleAuction();
     }
 
 

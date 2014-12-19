@@ -9,5 +9,5 @@ import java.util.List;
  * Created by karol on 17.12.14.
  */
 public interface AuctionService {
-    List<SimpleAuction> getAllAuction();
+    List<SimpleAuction> getAllSimpleAuction();
 }
