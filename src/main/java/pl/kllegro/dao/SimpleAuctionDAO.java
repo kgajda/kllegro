@@ -10,5 +10,5 @@ import java.util.List;
  * Created by karol on 19.12.14.
  */
 public interface SimpleAuctionDAO {
-    List<SimpleAuction> getAllProduct();
+    List<SimpleAuction> getSimpleAuction();
 }

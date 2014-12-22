@@ -12,7 +12,6 @@ public class Auction {
     private Date start;
     private Date end;
     private Product product;
-    private List<Offer> offerList;
     private Offer currentWinOffer;
 
     public Auction() {
@@ -50,19 +49,23 @@ public class Auction {
         this.product = product;
     }
 
-    public List<Offer> getOfferList() {
-        return offerList;
-    }
-
-    public void setOfferList(List<Offer> offerList) {
-        this.offerList = offerList;
-    }
-
     public Offer getCurrentWinOffer() {
         return currentWinOffer;
     }
 
     public void setCurrentWinOffer(Offer currentWinOffer) {
         this.currentWinOffer = currentWinOffer;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Auction{");
+        sb.append("id=").append(id);
+        sb.append(", start=").append(start);
+        sb.append(", end=").append(end);
+        sb.append(", product=").append(product);
+        sb.append(", currentWinOffer=").append(currentWinOffer);
+        sb.append('}');
+        return sb.toString();
     }
 }

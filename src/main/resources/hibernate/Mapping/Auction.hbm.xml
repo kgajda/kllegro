@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="pl.kllegro.model.Auction" table="Auction">
+        <id name="id" type="java.lang.Long">
+            <column name="auction_id"/>
+            <generator class="native" />
+        </id>
+
+        <many-to-one name="product" column="product_id"
+                     class="pl.kllegro.model.Product"
+                     not-null="true"
+                     cascade="save-update"
+                     lazy="false"
+                     fetch="join"/>
+
+        <many-to-one name="currentWinOffer" column="offer_id"
+                     class="pl.kllegro.model.Offer"
+                     not-null="true"
+                     cascade="save-update"
+                     lazy="false"
+                     fetch="join"/>
+
+        <property name="start" type="java.util.Date">
+            <column name="auction_start"/>
+        </property>
+        <property name="end" type="java.util.Date">
+            <column name="auction_end"/>
+        </property>
+    </class>
+</hibernate-mapping>

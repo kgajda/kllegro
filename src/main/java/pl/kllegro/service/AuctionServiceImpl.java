@@ -18,6 +18,6 @@ public class AuctionServiceImpl implements AuctionService {
 
     @Override
     public List<SimpleAuction> getAllSimpleAuction() {
-        return simpleAuctionDAO.getAllProduct();
+        return simpleAuctionDAO.getSimpleAuction();
     }
 }
