@@ -18,7 +18,7 @@
 
         <many-to-one name="currentWinOffer" column="offer_id"
                      class="pl.kllegro.model.Offer"
-                     not-null="true"
+                     not-null="false"
                      cascade="save-update"
                      lazy="false"
                      fetch="join"/>
