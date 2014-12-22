@@ -12,7 +12,7 @@ import pl.kllegro.model.Auction;
  * Created by karol on 22.12.14.
  */
 @Repository
-@Profile("production")
+@Profile(value = {"production","test"})
 public class AuctionDAOImpl implements AuctionDAO {
     @Autowired
     private SessionFactory sessionFactory;
