@@ -55,6 +55,17 @@ public class Offer {
         this.date = date;
     }
 
+    public boolean isBigger(Offer oldOffer) {
+        if (oldOffer == null) {
+            return true;
+        }
+        if (price.compareTo(oldOffer.getPrice()) == 1 && date.after(oldOffer.getDate())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Offer{");
@@ -64,5 +75,9 @@ public class Offer {
         sb.append(", date=").append(date);
         sb.append('}');
         return sb.toString();
+    }
+
+    public boolean isBefore(Date end) {
+        return date.before(end);
     }
 }

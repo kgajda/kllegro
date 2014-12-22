@@ -1,4 +1,4 @@
-package pl.kllegro.dao;
+package pl.kllegro;
 
 import org.junit.Before;
 import org.junit.runner.RunWith;
@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import pl.kllegro.Application;
 import pl.kllegro.configuration.HibernateConfigurationForTest;
+import pl.kllegro.dao.AuctionDAO;
 import pl.kllegro.helper.DateParser;
 import pl.kllegro.model.Auction;
 import pl.kllegro.model.Offer;
@@ -41,6 +42,7 @@ public class AbstractInicializerForTests {
         Offer offer = new Offer();
         offer.setDate(DateParser.parseToDate("2015-12-10 15:14:17"));
         offer.setPrice(new BigDecimal(20));
+        auction.setCurrentWinOffer(offer);
         auction.setProduct(product);
         auction.setStart(DateParser.parseToDate("2015-10-10 15:14:17"));
         auction.setEnd(DateParser.parseToDate("2016-10-10 15:14:17"));

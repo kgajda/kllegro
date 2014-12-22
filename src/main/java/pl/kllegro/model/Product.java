@@ -1,5 +1,7 @@
 package pl.kllegro.model;
 
+import sun.util.resources.cldr.ga.LocaleNames_ga;
+
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
  */
 public class Product {
 
-    private long id;
+    private Long id;
     private String title;
     private String imageUrl;
     private String description;
@@ -24,11 +26,11 @@ public class Product {
         this.description = description;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

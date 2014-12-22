@@ -7,6 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import pl.kllegro.AbstractInicializerForTests;
 import pl.kllegro.Application;
 import pl.kllegro.configuration.HibernateConfigurationForTest;
 import pl.kllegro.model.SimpleAuction;

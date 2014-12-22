@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface AuctionService {
     List<SimpleAuction> getAllSimpleAuction();
+    Long createNewAuction(Auction auction);
+    Auction getAuction(long id);
 }

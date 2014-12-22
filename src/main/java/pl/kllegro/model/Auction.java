@@ -1,20 +1,32 @@
 package pl.kllegro.model;
 
+import pl.kllegro.exceptions.DepositsOfferException;
+
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by karol on 17.12.14.
  */
 public class Auction {
 
+    private long version;
+
     private long id;
     private Date start;
     private Date end;
+    private User user;
     private Product product;
     private Offer currentWinOffer;
 
     public Auction() {
+    }
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
     }
 
     public long getId() {
@@ -55,6 +67,17 @@ public class Auction {
 
     public void setCurrentWinOffer(Offer currentWinOffer) {
         this.currentWinOffer = currentWinOffer;
+    }
+
+    public void depositsNewOffer(Offer newOffer) throws DepositsOfferException {
+        if (newOffer == null) {
+            throw new DepositsOfferException("Offer is null");
+        }
+        if (newOffer.isBigger(currentWinOffer) && newOffer.isBefore(end)) {
+            currentWinOffer = newOffer;
+        } else {
+            throw new DepositsOfferException("Offer is too low current price is: " + currentWinOffer.getPrice() + "with date: " + currentWinOffer.getDate().toString() + " your price is: " + newOffer.getPrice() + " with date: " + newOffer.getDate().toString() + " end: " + end.toString());
+        }
     }
 
     @Override
