@@ -1,14 +1,15 @@
 package pl.kllegro;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import pl.kllegro.Application;
-import pl.kllegro.configuration.HibernateConfigurationForTest;
+import pl.kllegro.configuration.TestConfiguration;
 import pl.kllegro.dao.AuctionDAO;
 import pl.kllegro.helper.DateParser;
 import pl.kllegro.model.Auction;
@@ -23,10 +24,13 @@ import java.text.ParseException;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {HibernateConfigurationForTest.class, Application.class})
+@ContextConfiguration(classes = {TestConfiguration.class, Application.class})
 @WebAppConfiguration
 @ActiveProfiles("test")
-public class AbstractInicializerForTests {
+public abstract class AbstractInicializerForTests {
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     @Autowired
     public AuctionDAO auctionDAO;
@@ -47,5 +51,11 @@ public class AbstractInicializerForTests {
         auction.setStart(DateParser.parseToDate("2015-10-10 15:14:17"));
         auction.setEnd(DateParser.parseToDate("2016-10-10 15:14:17"));
         auctionDAO.insert(auction);
+    }
+
+
+    @After
+    public void tearDown() throws Exception {
+        mongoTemplate.dropCollection("OfferHistory");
     }
 }

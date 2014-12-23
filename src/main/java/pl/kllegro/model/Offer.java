@@ -66,6 +66,10 @@ public class Offer {
         }
     }
 
+    public boolean isBefore(Date end) {
+        return date.before(end);
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Offer{");
@@ -77,7 +81,27 @@ public class Offer {
         return sb.toString();
     }
 
-    public boolean isBefore(Date end) {
-        return date.before(end);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Offer offer = (Offer) o;
+
+        if (id != offer.id) return false;
+        if (!date.equals(offer.date)) return false;
+        if (!price.equals(offer.price)) return false;
+        if (!user.equals(offer.user)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + user.hashCode();
+        result = 31 * result + price.hashCode();
+        result = 31 * result + date.hashCode();
+        return result;
     }
 }
