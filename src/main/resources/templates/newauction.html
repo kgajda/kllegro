@@ -1,0 +1,12 @@
+<div>
+    <form name="newAuction">
+        Title: <input type="text" name="Title" ng-model="auction.product.title" required=""/>
+        Description: <input type="text" name="Description" ng-model="auction.product.description" required=""/>
+        Image Url: <input type="text" name="Image Url" ng-model="auction.product.imageUrl" required=""/>
+        Date Start: <input type="datetime-local" name="Start date" ng-model="auction.start"
+                           placeholder="yyyy-MM-dd HH:mm:ss" required=""/>
+        End Start: <input type="datetime-local" name="End date" ng-model="auction.end" placeholder="yyyy-MM-dd HH:mm:ss"
+                          required=""/>
+        <input type="button" ng-click="save()" value="Create"/>
+    </form>
+</div>

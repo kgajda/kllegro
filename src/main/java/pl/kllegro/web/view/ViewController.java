@@ -26,4 +26,9 @@ public class ViewController {
     public String getAuction(Model model) {
         return "auction";
     }
+
+    @RequestMapping(value = "/newauction", method = RequestMethod.GET)
+    public String getNewAuction(Model model) {
+        return "newauction";
+    }
 }

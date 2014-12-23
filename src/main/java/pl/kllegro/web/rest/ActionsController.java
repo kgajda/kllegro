@@ -22,6 +22,7 @@ public class ActionsController {
     public List<SimpleAuction> getAllAuction() {
         return auctionService.getAllSimpleAuction();
     }
+
     @RequestMapping( value = "/{id}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Auction getAuction(@PathVariable String id) {
         return auctionService.getAuction(Long.valueOf(id));

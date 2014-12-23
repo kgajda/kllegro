@@ -16,9 +16,10 @@
                 url: 'rest/auction',
                 method: 'GET'
             }).success(function (data) {
-                   $scope.auctions=data;
+                    $scope.auctions = data;
                 }
             ).error(function (data, status, headers, config) {
+                    console.log("TODO:")
                     console.log(data);
                     console.log(headers);
                     console.log(status);
@@ -26,11 +27,37 @@
                 })
         })
 
+        .controller('NewAuctionController', function ($scope, $http) {
+            $scope.save = function () {
+                console.log($scope.auction);
+                $http.post('/rest/auction', $scope.auction)
+                    .success(function (data, status, headers, config) {
+                        console.log("TODO:")
+                        console.log(data);
+                        console.log(headers);
+                        console.log(status);
+                        console.log(config);
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log("TODO:")
+                        console.log(data);
+                        console.log(headers);
+                        console.log(status);
+                        console.log(config);
+                    });
+            }
+
+        })
+
         .config(function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/auction', {
                     templateUrl: 'auction.html',
                     controller: 'AuctionController'
+                })
+                .when('/newauction', {
+                    templateUrl: 'newauction.html',
+                    controller: 'NewAuctionController'
                 })
                 .when('/about', {
                     templateUrl: 'about.html'
