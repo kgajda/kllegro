@@ -14,5 +14,6 @@
         <mapping resource="hibernate/Mapping/Auction.hbm.xml" />
         <mapping resource="hibernate/Mapping/Product.hbm.xml" />
         <mapping resource="hibernate/Mapping/Offer.hbm.xml" />
+        <mapping resource="hibernate/Mapping/User.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

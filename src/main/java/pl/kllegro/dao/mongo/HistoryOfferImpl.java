@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import pl.kllegro.dao.mongo.model.OfferHistory;
 import pl.kllegro.model.Offer;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,10 +27,10 @@ public class HistoryOfferImpl implements HistoryOffer {
     }
 
     @Override
-    public Collection<Offer> getAllOffer(long auctionId) {
+    public List<Offer> getAllOffer(long auctionId) {
         Query query = new Query(Criteria.where("offerId").is(auctionId));
         List<OfferHistory> offerHistories = mongoTemplate.find(query, OfferHistory.class);
-        Collection<Offer> offerCollection = new LinkedList<>();
+        List<Offer> offerCollection = new LinkedList<>();
         offerHistories.forEach(offerHistory -> offerCollection.add(offerHistory.toOffer()));
         return offerCollection;
     }
