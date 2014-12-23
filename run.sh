@@ -10,6 +10,6 @@ fi
 
 java -jar build/libs/kllegro-0.1.0.jar &
 
-PID=$(ps aux | grep '[j]ava -jar build/libs/kllegro-0.1.0.jar' | awk '{print $2}')
+PID=$(ps aux | grep '[j]ava -jar build/libs/kllegro-0.1.0.jar')
 
 echo "Application PID:" $PID
