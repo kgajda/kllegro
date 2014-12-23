@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pl.kllegro.exceptions.DepositsOfferException;
-import pl.kllegro.model.Auction;
 import pl.kllegro.model.Offer;
 import pl.kllegro.service.OfferService;
 
@@ -18,7 +17,7 @@ public class OfferController {
     @Autowired
     private OfferService offerService;
 
-    @RequestMapping( value = "/{id}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Long getAuction(@PathVariable String id,@RequestBody Offer offer) throws BadHttpRequest {
         try {
             return offerService.createNewOffer(Long.valueOf(id),offer);
